@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Poppins:ital,wght@1,100&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <style>
+      
+  /* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap'); */
+  [theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --text-color: #e1e1ff;
+    --background-color: #161625;
+    --heading-color: #818cab;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Oswald", sans-serif;
+        text-decoration: none;
+        list-style: none;
+      }
+      body,:root {
+        font-family: "Oswald", sans-serif;
+        background-color: #191d28;
+        color: #3dc6c1;
+        font-weight: 50;
+      }
+      nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: -90px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 10%;
+        background: transparent;
+        transition: all 0.5s ease;
+      }
+      
+      .logo {
+        color: #3dc6c1;
+        font-size: 35px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 4px;
+      }
+      .logoimg{
+        width: 26%;
+      cursor: pointer;
+      }
+
+      .navlistgroup{
+        position: relative;
+        left: 60px;
+      }
+      .navlist {
+        display: flex;
+        justify-content: space-around;
+        
+      }
+      .navlist li {
+        margin: 0px 0px;
+        padding: 5px 10px;
+        color: #3dc6c1;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .btn {
+        padding: 5px 14px;
+        color: #fff;
+        background-color: #3dc6c1;
+        border-radius: 12px;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        margin-left: 2px;
+        margin-right: 20px;
+        height: 40px;
+        vertical-align: middle;
+        justify-content: center;
+        border: 2px solid transparent;
+        
+      }
+     
+      select {
+        background-color:#2e3241;
+        color: #fff;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        padding: 5px 10px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+
+     .togglebtn{
+      display: flex;
+      align-items: center;
+      position: relative;
+      right: -165px;
+      justify-content: space-between;
+       
+     }
+
+     .timecls{
+      height: 36px;
+      border: 3px solid  #3dc6c1;
+      color: #3dc6c1;
+      padding: 3px;
+      font-weight: bolder;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 10px;
+      width: 36px;
+     }
+
+      .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #3dc6c1;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2e3241;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2e3241;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+      .container .row .col-12 {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 20px;
+        color: #ffffff;
+        opacity: 0.45;
+      }
+      .container .row .col-12 h1{
+        text-align: center;
+        margin-top: 100px;
+        font-size: 30px;
+        font-weight: 300;
+        color: #fff;
+    
+        opacity: 0.9;
+      }
+      .container_two {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 0px 60px;
+        width: auto;
+        height: auto;
+        font-size: 37px;
+        font-weight: 100;
+      }
+      .container_two #mid {
+        color: #ffffff;
+        font-size: 80px;
+        margin-top: -30px;
+      }
+      .container_three h3{
+        font-weight: normal;
+      }
+      .container_three {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -12px;
+        padding: 0px 95px;
+        width: auto;
+        height: auto;
+        font-size: 17px;
+        letter-spacing: 0.3px;
+        /* font-weight: 100; */
+        color: #ffffff;
+        opacity: 0.45;
+      }
+      .tablecls{
+        text-indent: initial;
+        width: 100%;
+        letter-spacing: 1px;
+        border-collapse: separate;
+    border-spacing: 0 1em;
+        font-size: 25px;
+        font-weight: bolder;
+        justify-content: center;
+      }
+      .tablecls th{
+        font-weight:bolder;
+        
+      }
+      
+      .tablecls .datacls{
+        display: table-row;
+        background-color: #2e3241;
+        color: #ffffff;
+        height: 20px;
+       
+        
+      }
+      .tablecls .datacls td{
+    
+        text-align: center;
+        height: 60px;
+        color: #ffffff;
+        font-weight: bolder;
+        /* opacity: 1; */
+      }
+      .container_four {
+        display: flex;
+        /* justify-content: space-between; */
+        margin-top: 60px;
+        padding: 0px 30px;
+        /* margin-right: 20px; */
+        width: auto;
+        height: auto;
+        font-size: 22px;
+        font-weight: bolder;
+        color: #ffffff;
+        opacity: 0.45;
+      }
+      
+      .container_three #middle {
+        font-size: 17px;
+        color: #ffffff;
+        opacity: 0.9;
+        margin-top: 20px;
+      }
+      select option {
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 0.25rem;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <script>
+        setInterval(()=>{
+          var prem=document.querySelector(".timecls");
+          let date=new Date();
+          let seconds=date.getSeconds();
+          prem.textContent=seconds
+          });
+      </script>
+      <div class="logoimg">
+      <img src="hodlinfo_logo.png" height="65px" width="110%" style="padding: 10px;">
+      </div>
+      
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <div class="navlistgroup">
+      <ul class="navlist">
+        <li>
+          <select name="INR" id="INR">
+            <option value="INR">INR</option>
+          </select>
+        </li>
+        <li>
+          <select name="INR" id="INR">
+            <option value="INR">BTC</option>
+            <option value="INR">ETH</option>
+            <option value="INR">USDT</option>
+            <option value="INR">XRP</option>
+            <option value="INR">TRX</option>
+            <option value="INR">DASH</option>
+            <option value="INR">ZEC</option>
+            <option value="INR">XEM</option>
+            <option value="INR">IOST</option>
+            <option value="INR">WIN</option>
+            <option value="INR">BTT</option>
+            <option value="INR">WRX</option>
+          </select>
+        </li>
+        <li>
+          <select name="INR" id="INR">
+            <option value="INR">BUY BTC</option>
+            <option></option>
+          </select>
+        </li>
+      </ul>
+      </div>
+
+      <div class="togglebtn">
+        <div class="timecls"><b>59</b></div>
+
+      <a href="" class="btn"><img src="telegram.png" width="20px" height="14px"/> Connect Telegram</a>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+      </div>
+    </nav>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="h1cls">Best price to Trade</h1>
+          </div>
+          <div class="container_two">
+            <ul>
+              <li><h3>0.12 %</h3></li>
+            </ul>
+            <ul>
+              <li><h3>0.55 %</h3></li>
+            </ul>
+            <ul>
+              <li><h3 id="mid">₹ 26,30,093</h3></li>
+            </ul>
+            <ul>
+              <li><h3>6.37 %</h3></li>
+            </ul>
+            <ul>
+              <li><h3>10.9 %</h3></li>
+            </ul>
+          </div>
+          <div class="container_three">
+            <ul>
+              <li><h3>5 Mins</h3></li>
+            </ul>
+            <ul>
+              <li><h3>1 Hour</h3></li>
+            </ul>
+            <ul>
+              <li>
+                <h3 id="middle">
+                  Average BTC/INR net price including commission
+                </h3>
+              </li>
+            </ul>
+            <ul>
+              <li><h3>1 Day</h3></li>
+            </ul>
+            <ul>
+              <li><h3>7 Days</h3></li>
+            </ul>
+          </div>
+          <div class="container_four">
+          <table class="tablecls">
+            <tr>
+              <th>#</th>
+              <th>Platform</th>
+              <th>Last Traded Price</th>
+              <th>Volume</th>
+              <th>Buy Price</th>
+              <th>Sell Price</th>
+            </tr>
+            <% for(var i=0;i<data.length;i++) { %>
+            <tr class="datacls" id="p">
+              <td><%=i+1%></td>
+              <td><%=data[i].name%></td>
+              <td><%=data[i].last%></td>
+              <td><%=data[i].volume%></td>
+              <td><%=data[i].buy%></td>
+              <td><%=data[i].sell%></td>
+              <!-- <td><%=data[i].base_unit%></td> -->
+            </tr>
+            <% } %>
+          </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      const toggleSwitch =
+    document.querySelector('.switch input[type="checkbox"]');
+
+    function switchTheme(e) {
+  
+  /* Once checkbox is checked default theme change to dark */
+  if (e.target.checked) {
+      document.documentElement.setAttribute('theme', 'dark');
+  }
+
+  /* While page in dark mode and checkbox is 
+  checked then theme back to change light*/
+  else {
+      document.documentElement.setAttribute('theme', 'light');
+  }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+
+    </script>
+  </body>
+</html>
